@@ -59,12 +59,12 @@
             requestMessage = new HttpRequestMessage
             {
                 Method = HttpMethod.Post,
-                RequestUri = new Uri(@"https://demo-towernter.harperdbcloud.com")
+                RequestUri = new Uri(@"HDB_URL_HERE")
             };
 
             requestMessage.Content = JsonContent.Create(postBody);
 
-            http.DefaultRequestHeaders.Add("Authorization", "Basic dG93ZXJudGVyOlhLM0o2TFZiN0dAIVVaaQ==");
+            http.DefaultRequestHeaders.Add("Authorization", "Basic YOUR_AUTH_TOKEN_HERE");
 
             responseMessage = await http.SendAsync(requestMessage);
 
@@ -77,7 +77,7 @@
         catch (Exception)
         {
 
-            result =responseMessage.ToString();
+            result = responseMessage.ToString();
         }
 
     }
